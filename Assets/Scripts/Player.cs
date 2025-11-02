@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         if ((Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame) && Mathf.Abs(rb.linearVelocity.y) < 0.1f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            if (GameManager.Instance != null) GameManager.Instance.PlayJumpSfx();
         }
 
         rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
@@ -49,8 +50,8 @@ public class Player : MonoBehaviour
     // 碰撞
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Trap") && !isDying) StartCoroutine(Die("Trap"));
-        if (collision.gameObject.CompareTag("Bullet") && !isDying) StartCoroutine(Die("Bullet"));
+        if (collision.gameObject.CompareTag("Trap") && !isDying) StartCoroutine(Die());
+        if (collision.gameObject.CompareTag("Bullet") && !isDying) StartCoroutine(Die());
 
         if (completeObject != null && collision.gameObject == completeObject && GameManager.Instance != null)
         {
@@ -58,7 +59,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator Die(string deathCause = "")
+    IEnumerator Die()
     {
         isDying = true;
         Vector3 deathPosition = transform.position;
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
         
         if (GameManager.Instance != null)
         {
-            yield return StartCoroutine(GameManager.Instance.OnPlayerDeath(deathPosition, this, deathCause));
+            yield return StartCoroutine(GameManager.Instance.OnPlayerDeath(deathPosition, this));
         }
         
         isDying = false;

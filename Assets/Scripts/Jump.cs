@@ -25,6 +25,7 @@ public class Jump : MonoBehaviour
         if (playerRb != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame))
         {
             playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, highJumpForce);
+            if (GameManager.Instance != null) GameManager.Instance.PlayBigJumpSfx();
             StartCoroutine(PlayBounceAnimation());
         }
     }
@@ -39,6 +40,7 @@ public class Jump : MonoBehaviour
             {
                 playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
                 if (playerRb != null) playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, bounceForce);
+                if (GameManager.Instance != null) GameManager.Instance.PlayBoingSfx();
                 StartCoroutine(PlayBounceAnimation());
                 break;
             }

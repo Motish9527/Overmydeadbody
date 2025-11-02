@@ -11,6 +11,7 @@ public class bullet : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 currentStartPosition;
     private Transform player;
+    private Rigidbody2D rb;
     private bool hasLaunched = false;
     private bool canDetect = false;
     private bool hasShot = false;
@@ -18,6 +19,14 @@ public class bullet : MonoBehaviour
     
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.gravityScale = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
         initialPosition = transform.position;
         currentStartPosition = transform.position;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -28,7 +37,7 @@ public class bullet : MonoBehaviour
     {
         if (hasLaunched)
         {
-            transform.position += Vector3.left * bulletSpeed * Time.deltaTime;
+            rb.linearVelocity = Vector2.left * bulletSpeed;
             if (Time.time - launchTime >= bulletLifetime) ReturnAndShift();
         }
         else if (canDetect && !hasShot && player != null)
@@ -43,11 +52,11 @@ public class bullet : MonoBehaviour
         launchTime = Time.time;
     }
     
-    // 子彈發射完後，藏到牆裡下一輪再出來
     void ReturnAndShift()
     {
         hasLaunched = false;
         hasShot = true;
+        rb.linearVelocity = Vector2.zero;
         currentStartPosition += Vector3.right * rightShift;
         transform.position = currentStartPosition;
     }
@@ -67,6 +76,7 @@ public class bullet : MonoBehaviour
         hasLaunched = false;
         hasShot = false;
         canDetect = false;
+        rb.linearVelocity = Vector2.zero;
         currentStartPosition = initialPosition;
         transform.position = initialPosition;
     }
@@ -74,11 +84,5 @@ public class bullet : MonoBehaviour
     public void StartDetection()
     {
         canDetect = true;
-    }
-    
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

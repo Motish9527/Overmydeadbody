@@ -54,6 +54,17 @@ public class Rockhead : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.linearVelocity = Vector2.down * fallSpeed;
         }
+        
+        if (GameManager.Instance != null && IsInCameraView()) GameManager.Instance.PlayRockSfx();
+    }
+    
+    bool IsInCameraView()
+    {
+        Camera cam = Camera.main;
+        if (cam == null) return false;
+        
+        Vector3 viewportPoint = cam.WorldToViewportPoint(transform.position);
+        return viewportPoint.x >= 0 && viewportPoint.x <= 1 && viewportPoint.y >= 0 && viewportPoint.y <= 1 && viewportPoint.z > 0;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,7 +76,7 @@ public class Rockhead : MonoBehaviour
                 if (contact.normal.y > 0.5f)
                 {
                     Player playerScript = collision.gameObject.GetComponent<Player>();
-                    if (playerScript != null) playerScript.StartCoroutine("Die", "Trap");
+                    if (playerScript != null) playerScript.StartCoroutine("Die");
                     break;
                 }
             }
