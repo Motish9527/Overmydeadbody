@@ -32,7 +32,6 @@ public class fire : MonoBehaviour
                 StopCoroutine(stopSoundCoroutine);
                 stopSoundCoroutine = null;
             }
-            
             if (!isPlayingSound && GameManager.Instance != null && GameManager.Instance.fireSfx != null)
             {
                 audioSource.clip = GameManager.Instance.fireSfx;
@@ -40,12 +39,9 @@ public class fire : MonoBehaviour
                 isPlayingSound = true;
             }
         }
-        else
+        else if (isPlayingSound && stopSoundCoroutine == null)
         {
-            if (isPlayingSound && stopSoundCoroutine == null)
-            {
-                stopSoundCoroutine = StartCoroutine(StopSoundAfterDelay());
-            }
+            stopSoundCoroutine = StartCoroutine(StopSoundAfterDelay());
         }
     }
     
@@ -61,7 +57,6 @@ public class fire : MonoBehaviour
     {
         Camera cam = Camera.main;
         if (cam == null) return false;
-        
         Vector3 viewportPoint = cam.WorldToViewportPoint(transform.position);
         return viewportPoint.x >= 0 && viewportPoint.x <= 1 && viewportPoint.y >= 0 && viewportPoint.y <= 1 && viewportPoint.z > 0;
     }
@@ -71,7 +66,6 @@ public class fire : MonoBehaviour
         while (true)
         {
             if (animationSprites == null || animationSprites.Length == 0) yield break;
-            
             spriteRenderer.sprite = animationSprites[currentFrame];
             currentFrame = (currentFrame + 1) % animationSprites.Length;
             yield return new WaitForSeconds(frameRate);

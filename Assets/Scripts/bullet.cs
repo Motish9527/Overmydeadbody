@@ -57,7 +57,7 @@ public class bullet : MonoBehaviour
         hasLaunched = false;
         hasShot = true;
         rb.linearVelocity = Vector2.zero;
-        currentStartPosition += Vector3.right * rightShift;
+        currentStartPosition += Vector3.right * rightShift;   // 把子彈藏起來
         transform.position = currentStartPosition;
     }
     

@@ -6,10 +6,13 @@ using UnityEngine.InputSystem;
 public class GameManager: MonoBehaviour
 {
     public static GameManager Instance;
+    
+    // 屍體
     public GameObject deadBodyPrefab;
     public int maxDeadBodies = 5;
     public bool stageClear = false;
     
+    // 音樂音效
     [Header("Audio")]
     public AudioClip themeMusic;
     public AudioClip gameClearMusic;
@@ -23,6 +26,7 @@ public class GameManager: MonoBehaviour
     private AudioSource musicSource;
     private AudioSource sfxSource;
     
+    // Game Objects
     private List<GameObject> deadBodies = new List<GameObject>(); 
     private List<Rockhead> rockheads = new List<Rockhead>();
     private List<bullet> bullets = new List<bullet>();
@@ -57,6 +61,7 @@ public class GameManager: MonoBehaviour
     {
         RegisterAllRockheads();
         RegisterAllBullets();
+
         StartAllRockheads();
         StartAllBullets();
         player = FindFirstObjectByType<Player>();
@@ -68,6 +73,7 @@ public class GameManager: MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame) RestartGame();
     }
 
+    // Stage Clear
     public void OnStageClear()
     {
         if (stageClear) return;
@@ -95,6 +101,33 @@ public class GameManager: MonoBehaviour
         }
     }
 
+    // Restart
+    public void RestartGame()
+    {
+        foreach (GameObject deadBody in deadBodies)
+        {
+            if (deadBody != null) Destroy(deadBody);
+        }
+        deadBodies.Clear();
+        
+        if (player != null)
+        {
+            player.transform.position = player.startPosition;
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+        }
+        
+        ResetAllRockheads();
+        StartAllRockheads();
+        ResetAllBullets();
+        StartAllBullets();
+        stageClear = false;
+        PlayThemeMusic();
+        
+        Debug.Log("Game Restarted! 遊戲已重新開始！");
+    }
+
+    // Rockhead
     public void RegisterRockhead(Rockhead rockhead)
     {
         if (!rockheads.Contains(rockhead)) rockheads.Add(rockhead);
@@ -124,6 +157,7 @@ public class GameManager: MonoBehaviour
         }
     }
     
+    // Bullet
     public void RegisterBullet(bullet bulletObj)
     {
         if (!bullets.Contains(bulletObj)) bullets.Add(bulletObj);
@@ -153,6 +187,7 @@ public class GameManager: MonoBehaviour
         }
     }
 
+    // Deadbody
     public void SpawnDeadBody(Vector3 position)
     {
         if (deadBodyPrefab == null) return;
@@ -167,6 +202,7 @@ public class GameManager: MonoBehaviour
         }
     }
     
+    // Sounds
     private void PlayThemeMusic()
     {
         if (musicSource != null && themeMusic != null)
@@ -176,66 +212,33 @@ public class GameManager: MonoBehaviour
             musicSource.Play();
         }
     }
-
-    public void PlayJumpSfx()
+    
+    private void PlaySfx(AudioClip clip, float volume = 1f)
     {
-        if (sfxSource != null && jumpSfx != null) sfxSource.PlayOneShot(jumpSfx, 0.5f);
+        if (sfxSource != null && clip != null) sfxSource.PlayOneShot(clip, volume);
     }
+    
+    private void PlayRandomSfx(AudioClip[] clips, float volume = 1f)
+    {
+        if (sfxSource != null && clips != null && clips.Length > 0)
+        {
+            sfxSource.PlayOneShot(clips[Random.Range(0, clips.Length)], volume);
+        }
+    }
+
+    public void PlayJumpSfx() => PlaySfx(jumpSfx, 0.5f);
+    public void PlayBoingSfx() => PlayRandomSfx(boingSfxList, 1.5f);
+    public void PlayBigJumpSfx() => PlaySfx(bigJumpSfx);
+    public void PlayRockSfx() => PlaySfx(rockSfx);
     
      public IEnumerator OnPlayerDeath(Vector3 deathPosition, Player player)
     {
-        if (sfxSource != null && deadSfxList != null && deadSfxList.Length > 0)
-        {
-            sfxSource.PlayOneShot(deadSfxList[Random.Range(0, deadSfxList.Length)], 1.5f);
-        }
+        PlayRandomSfx(deadSfxList, 1.5f);
         SpawnDeadBody(deathPosition);
         ResetAllRockheads();
         ResetAllBullets();
         yield return StartCoroutine(player.RespawnAnimation());
         StartAllRockheads();
         StartAllBullets();
-    }
-    
-    public void PlayBoingSfx()
-    {
-        if (sfxSource != null && boingSfxList != null && boingSfxList.Length > 0)
-        {
-            sfxSource.PlayOneShot(boingSfxList[Random.Range(0, boingSfxList.Length)], 1.5f);
-        }
-    }
-    
-    public void PlayBigJumpSfx()
-    {
-        if (sfxSource != null && bigJumpSfx != null) sfxSource.PlayOneShot(bigJumpSfx);
-    }
-    
-    public void PlayRockSfx()
-    {
-        if (sfxSource != null && rockSfx != null) sfxSource.PlayOneShot(rockSfx);
-    }
-    
-    public void RestartGame()
-    {
-        foreach (GameObject deadBody in deadBodies)
-        {
-            if (deadBody != null) Destroy(deadBody);
-        }
-        deadBodies.Clear();
-        
-        if (player != null)
-        {
-            player.transform.position = player.startPosition;
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.linearVelocity = Vector2.zero;
-        }
-        
-        ResetAllRockheads();
-        StartAllRockheads();
-        ResetAllBullets();
-        StartAllBullets();
-        stageClear = false;
-        PlayThemeMusic();
-        
-        Debug.Log("Game Restarted! 遊戲已重新開始！");
     }
 }
