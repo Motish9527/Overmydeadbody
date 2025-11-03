@@ -50,6 +50,7 @@ public class bullet : MonoBehaviour
     {
         hasLaunched = true;
         launchTime = Time.time;
+        if (GameManager.Instance != null) GameManager.Instance.PlayBulletSfx();
     }
     
     void ReturnAndShift()

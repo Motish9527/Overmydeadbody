@@ -181,6 +181,6 @@ MonoBehaviour:
   detectionRange: 4.8
   fallSpeed: 10
   riseSpeed: 5
-  minWaitTime: 0.35
-  maxWaitTime: 1.5
+  minWaitTime: 0.25
+  maxWaitTime: 1.3
   resetDelay: 1

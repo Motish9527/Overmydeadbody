@@ -23,6 +23,7 @@ public class GameManager: MonoBehaviour
     public AudioClip bigJumpSfx;
     public AudioClip rockSfx;
     public AudioClip fireSfx;
+    public AudioClip bulletSfx;
     private AudioSource musicSource;
     private AudioSource sfxSource;
     
@@ -230,6 +231,7 @@ public class GameManager: MonoBehaviour
     public void PlayBoingSfx() => PlayRandomSfx(boingSfxList, 1.5f);
     public void PlayBigJumpSfx() => PlaySfx(bigJumpSfx);
     public void PlayRockSfx() => PlaySfx(rockSfx);
+    public void PlayBulletSfx() => PlaySfx(bulletSfx);
     
      public IEnumerator OnPlayerDeath(Vector3 deathPosition, Player player)
     {

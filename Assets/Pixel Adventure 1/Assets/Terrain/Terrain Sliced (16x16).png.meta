@@ -4077,7 +4077,7 @@ TextureImporter:
         width: 44
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4086,6 +4086,28 @@ TextureImporter:
       bones: []
       spriteID: a1310fa3d4fb82a479c95bc059db13c8
       internalID: -402647775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bound_r
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 167
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f150d2a5350339a4e8b67fcab05c4ae8
+      internalID: -724493443
       vertices: []
       indices: 
       edges: []
@@ -4255,6 +4277,7 @@ TextureImporter:
       block_big: -1743760229
       bound: -4874278423985981231
       bound_g: -593493193
+      bound_r: -724493443
       dirt: -626802473
       l2_terre: -1717009153
       l2_terre_mid: -1461669862
