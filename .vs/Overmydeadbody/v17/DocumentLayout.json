@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yymot\\Overmydeadbody\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|C:\\Users\\yymot\\Overmydeadbody\\assets\\sprites\\scripts\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|solutionrelative:assets\\sprites\\scripts\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|c:\\users\\yymot\\overmydeadbody\\assets\\sprites\\scripts\\toxicriver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|solutionrelative:assets\\sprites\\scripts\\toxicriver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|c:\\users\\yymot\\overmydeadbody\\assets\\sprites\\scripts\\rocksmash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|solutionrelative:assets\\sprites\\scripts\\rocksmash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|C:\\Users\\yymot\\Overmydeadbody\\assets\\sprites\\scripts\\button01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B1BD939-F6EF-E058-D39C-BF24836F686C}|Assembly-CSharp.csproj|solutionrelative:assets\\sprites\\scripts\\button01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToxicRiver.cs",
+              "DocumentMoniker": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\ToxicRiver.cs",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\Scripts\\ToxicRiver.cs",
+              "ToolTip": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\ToxicRiver.cs",
+              "RelativeToolTip": "Assets\\Sprites\\Scripts\\ToxicRiver.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAswH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T01:44:31.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RockSmash.cs",
+              "DocumentMoniker": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\RockSmash.cs",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\Scripts\\RockSmash.cs",
+              "ToolTip": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\RockSmash.cs",
+              "RelativeToolTip": "Assets\\Sprites\\Scripts\\RockSmash.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAswJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T01:26:44.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Button01.cs",
+              "DocumentMoniker": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\Button01.cs",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\Scripts\\Button01.cs",
+              "ToolTip": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\Button01.cs",
+              "RelativeToolTip": "Assets\\Sprites\\Scripts\\Button01.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAowFcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T01:11:31.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Move.cs",
+              "DocumentMoniker": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\Move.cs",
+              "RelativeDocumentMoniker": "Assets\\Sprites\\Scripts\\Move.cs",
+              "ToolTip": "C:\\Users\\yymot\\Overmydeadbody\\Assets\\Sprites\\Scripts\\Move.cs",
+              "RelativeToolTip": "Assets\\Sprites\\Scripts\\Move.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAcwJsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T22:14:14.665Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
