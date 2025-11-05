@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1604
     height: 961.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 113
+  controlID: 15
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -342,10 +342,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 37}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 02fbffff7cbc000018bd00002ebf00006ac00000f2c000008ac100008ac2000062c60000f6c600000ac9000088c9000076cf0000d6d20000fcd40000
+      m_ExpandedIDs: d209ffff080ffffff2330100023901001a3b01002a3b0100a63c0100fa4401008e4501009c4701004c480100d8490100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -484,7 +484,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b0230000
     m_LastClickedID: 9136
-    m_ExpandedIDs: 00000000c8d90000cad90000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,24 +510,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 273.49854}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000010d90000c8d90000cad900003edb000044db000048db00004cdb000050db000058db0000
+    m_ExpandedIDs: ffffffff1a020100aa0e010078190100e01a0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: deadbody
-      m_OriginalName: deadbody
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 55478
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 2}
@@ -1220,9 +1220,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -4.866534, y: 9.501301, z: -0.07598777}
+    m_Target: {x: -4.442207, y: 10.277502, z: -0.029707342}
     speed: 2
-    m_Value: {x: -4.866534, y: 9.501301, z: -0.07598777}
+    m_Value: {x: -4.442207, y: 10.277502, z: -0.029707342}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1272,9 +1272,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 16.233274
+    m_Target: 19.6896
     speed: 2
-    m_Value: 16.233274
+    m_Value: 19.6896
   m_Ortho:
     m_Target: 1
     speed: 2
